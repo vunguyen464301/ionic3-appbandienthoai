@@ -1,0 +1,7 @@
+{
+  "name": "appbandienthoai",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

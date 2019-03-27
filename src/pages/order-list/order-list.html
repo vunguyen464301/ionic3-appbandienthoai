@@ -1,0 +1,35 @@
+<!--
+  Generated template for the QuanlydathangPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Order Management</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background: #eedede; ">
+    <ion-list>
+        <ion-item-sliding *ngFor="let i of listorder">
+            <ion-item >
+              <h5><b>id_phone :</b> {{i.id_phone}}<br>
+                <b>Phone name: </b>{{i.phone_name}}</h5>
+                <b>Phone number set :</b> {{i.numberphone}}<br>
+                <b>Date and time set:</b> {{i.time}}
+            </ion-item>
+          <ion-item-options>
+                <button ion-button (click)="btn_Cancel(i)" >
+                      <ion-icon name='md-close' item-start></ion-icon>
+                  Cancel
+                  </button>
+           
+          </ion-item-options>       
+        </ion-item-sliding>
+        </ion-list>
+</ion-content>

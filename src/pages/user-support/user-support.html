@@ -1,0 +1,36 @@
+<!--
+  Generated template for the HotroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+  </button>
+      
+    <ion-title>Help</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding style="background: #eedede;" >
+    <ng-container *ngFor="let m of message">
+        <div class={{m.class}}>
+            {{m.numberphone}} : {{m.content}}
+          </div>
+      </ng-container>
+
+<ion-list>
+    <ion-item>
+      <ion-label floating>Write a message</ion-label>
+      <ion-input type="text"[(ngModel)]="edt_message"></ion-input>
+    </ion-item>
+    <button (click)="btn_Send()">
+            
+    <ion-icon name='md-send' item-start></ion-icon> 
+    </button>
+  </ion-list>
+  
+</ion-content>

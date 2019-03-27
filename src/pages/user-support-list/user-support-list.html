@@ -1,0 +1,31 @@
+<!--
+  Generated template for the QuanlyhotroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>List User Support</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding style="background: #eedede;">
+  
+    <ion-card class="cards-list-demo"  >
+        <ion-list>
+          <ng-container *ngFor="let i of listaccount">
+          <button ion-item (click)="btn_Click(i.numberphone)">
+            <ion-icon name='md-contact' item-start></ion-icon>
+            {{i.numberphone}}
+          </button>
+        </ng-container>
+        </ion-list>
+      </ion-card>
+</ion-content>

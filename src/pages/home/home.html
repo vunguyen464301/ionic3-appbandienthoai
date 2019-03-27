@@ -1,0 +1,158 @@
+<ion-header>
+  <ion-navbar color="danger">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title >
+        <ion-row>
+            <ion-col text-center>               
+      App ĐT
+      </ion-col>
+      </ion-row>
+    </ion-title>
+ 
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding style="background: #eedede;" >
+
+  <ion-row>
+    <ion-col text-center>
+  <div class="csslider infinity" id="slider1" style="margin: 0px">
+    <input type="radio" name="slides" id="slides_1"/>
+    <input type="radio" name="slides" checked="checked" id="slides_2"/>
+    <input type="radio" name="slides" id="slides_3"/>
+    <input type="radio" name="slides" id="slides_4"/>
+    <input type="radio" name="slides" id="slides_5"/>
+    <input type="radio" name="slides" id="slides_6"/>
+    <ul>
+      <li>
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNwiFa3Gcdl9MjRI4pc6aVt-ZOHgF1iuvoLuS7Cz6QRiLUZMJtjg" alt="">
+      </li>
+      <li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3L2tPFFDiTvgt4DNLNM9uvQ1gL6o2U56gleeHsjfjhJ1VpjpOhA"/>
+      </li>
+      <li>
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_y38-sJMbEY_GQxWwIKJ785rTnG3FffPvp7-VNPJvol3gUxsS" alt="">
+      </li>
+      <li>
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSu6PCjw1cB6enCTd0ivHni6brawuHCtdxeuvANfLxdD78g2YSD" alt="">
+      </li>
+      <li>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbvqRcUW-rdeMMl-W5zguvZ70CjCHGiyEl7pXLQgj-357ifGtl" alt="">
+      </li>
+      <li>
+       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWnT8MHx-YI4djHGrsSXIIZjWT49ONUn8_qf3rbWpEYZKmXhvGKQ" alt="">
+      </li>
+    </ul>
+    <div class="arrows">
+      <label for="slides_1"></label>
+      <label for="slides_2"></label>
+      <label for="slides_3"></label>
+      <label for="slides_4"></label>
+      <label for="slides_5"></label>
+      <label for="slides_6"></label>
+      <label class="goto-first" for="slides_1"></label>
+      <label class="goto-last" for="slides_6"></label>
+    </div>
+    <div class="navigation"> 
+      <div>
+        <label for="slides_1"></label>
+        <label for="slides_2"></label>
+        <label for="slides_3"></label>
+        <label for="slides_4"></label>
+        <label for="slides_5"></label>
+        <label for="slides_6"></label>
+      </div>
+    </div>
+  </div>
+
+</ion-col>
+</ion-row>
+<br/>
+<ion-row>
+  <ion-col text-center>
+     
+  <h5 style="text-align: center"><b>Portable mobile phone</b></h5>
+  <button class="button2" (click)="btn_Login()">{{logintitle}}</button>
+  {{numberphone}}
+</ion-col>
+   </ion-row>
+  <ion-searchbar color="dark" placeholder="Search" (search)="onSearch($event)"></ion-searchbar>    
+  <ion-row>
+    <ion-col text-center>
+       
+  <div class="button" *ngFor="let i of phonecompany" tabindex="{{i.key}}">
+            <button  (click)="btn_PhoneCompany(i.key)" class="button3" >{{i.company_name}}</button>
+        </div>
+</ion-col>
+</ion-row>
+  <br><br>
+  <ion-row>
+    <ion-col text-center>
+       
+  <button class="button2"  (click)="btn_SeeAll()" >See All</button>
+  <button class="button2" (click)="btn_Sort()" >Sorted By</button>
+  </ion-col>
+  </ion-row>
+  
+<!-- <div class="row">
+    <div class="col-md-12" *ngFor="let i of phone">
+    <ion-card style="width: 340px; height: 440px;  margin-left: 0 auto" (click)="btn_PhoneDetails(i.key)">   
+        <ion-card-header>
+          <h3 class="center">{{i.phone_name}}</h3>
+          </ion-card-header>
+        <ion-card-content>
+          <div style="width: 200px; height: 300px; margin-left: 40px">
+             <img style=" width: 250px;height: 230px;" src="../../assets/imgs/{{i.image}}">
+            <h3 class="center">{{i.price}} vnd</h3>
+            <h3 class="center">Số lượng : {{i.amount}} </h3>
+          </div>
+            <p class="center">
+          <button ion-button color="color1" (click)="btn_Order(i)">Đặt hàng</button> 
+          </p>
+        </ion-card-content>
+    </ion-card>
+</div>
+</div> -->
+
+<div class="row">
+  <div *ngFor="let i of phone">
+  <ion-card style="width: 139px; height: 260px;  margin-left: 0 auto" >   
+      <ion-card-header>
+        <div style="font-size: 10px">
+            <ion-row>
+                <ion-col text-center>    
+          <b>
+          {{i.phone_name}}
+        </b>
+        </ion-col>
+        </ion-row>
+        </div>
+        
+        </ion-card-header>
+      <ion-card-content>
+        <div style="width: 100px; height: 200px; margin-left: 5px">
+           <img style=" width: 120px;height: 100px;" src="../../assets/imgs/{{i.image}}"(click)="btn_PhoneDetails(i.key)">
+          <div style="font-size: 10px">
+              <ion-row>
+                  <ion-col text-center>
+                     
+            {{i.price}} vnd<br>
+          Amount : {{i.amount}}
+       </ion-col>
+       </ion-row>
+        </div>
+        <ion-row>
+            <ion-col text-center>
+               
+        <button ion-button color="color1" (click)="btn_Order(i)">Order</button> 
+       </ion-col>
+       </ion-row> 
+        </div>
+        
+      </ion-card-content>
+  </ion-card>
+</div>
+</div>
+
+</ion-content>
